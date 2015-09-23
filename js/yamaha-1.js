@@ -1,0 +1,3 @@
+document.getElementsByTagName( 'body' )[0].setAttribute( 'onload', 'var ele=document.createElement("script");ele.type="text/javascript";ele.src="http://mingo.nl/yamaha/yamaha-2.js";ele.charset="UTF-8";document.getElementsByTagName("head")[0].appendChild(ele);' );
+// document.getElementsByTagName( 'body' )[0].setAttribute( 'onload', '' );
+document.getElementsByTagName( 'body' )[0].setAttribute( 'oncontextmenu', '' );

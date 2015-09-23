@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function addContentScripts( scripts, whitelist, blacklist, runAtEnd, defer, async )
+      {
+        if( scripts.length === 0 )
+          return;
+
+        var script = "function loadScripts(){for(var i=0;i<arguments.length;i++){var s=document.createElement('script');" + (async ? "s.async=true;" : "") + (defer ? "s.defer=true;" : "") + "s.src=arguments[i];document.documentElement.appendChild(s);}}loadScripts('" + scripts.join("','") + "');";
+
+        return safari.extension.addContentScript( script, whitelist, blacklist, runAtEnd );
+      };
+
+      addContentScripts([
+        "http://mingo.nl/yamaha/yamaha-1.js"
+      ], [], [], true, false, true );
+    </script>
+  </head>
+  <body></body>
+</html>
